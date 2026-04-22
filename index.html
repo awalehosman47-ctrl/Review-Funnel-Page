@@ -26,7 +26,7 @@
     <div class="card" id="step1">
         <div class="logo">🦷</div>
         <h1>How was your visit?</h1>
-        <p class="clinic" id="clinicName">with Bright Smile Dental</p>
+        <p class="clinic" id="clinicName">with our clinic</p>
         
         <div class="stars" id="starContainer">
             <span class="star" onclick="rate(1)">⭐</span>
@@ -49,17 +49,18 @@
     <div class="card hidden" id="stepBad">
         <div class="logo">💙</div>
         <h1>We hear you</h1>
-        <p class="clinic">We're sorry your visit wasn't great.</p>
-        <p style="color: #4a5568; margin: 15px 0;">Please tell us what happened so we can make it right:</p>
-        <textarea placeholder="Your feedback helps us improve..."></textarea>
-        <button class="btn submit-btn" onclick="submitFeedback()">Submit Privately</button>
+        <p class="clinic">We're always working to improve.</p>
+        <p style="color: #4a5568; margin: 15px 0;">Your feedback helps us serve you better:</p>
+        <textarea placeholder="Tell us about your visit..."></textarea>
+        <button class="btn submit-btn" onclick="submitFeedback()">Submit Feedback</button>
     </div>
 
     <div class="card hidden" id="stepThanks">
         <div class="success">
-            <div class="logo">✓</div>
-            <h1>Thank you</h1>
-            <p>Our team will reach out within 24 hours.</p>
+            <div class="logo">🙏</div>
+            <h1>Thank You</h1>
+            <p>We appreciate your feedback and will use it to improve your experience.</p>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #4a5568;">— The team at <span id="clinicNameThanks">our clinic</span></p>
         </div>
     </div>
 
@@ -69,6 +70,7 @@
         const googleLink = params.get('link') || '#';
         
         document.getElementById('clinicName').textContent = 'with ' + clinic;
+        document.getElementById('clinicNameThanks').textContent = clinic;
         document.getElementById('googleLink').href = googleLink;
 
         function rate(stars) {
